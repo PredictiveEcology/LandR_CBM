@@ -2,20 +2,32 @@
 ## these scripts are to help me figure out if the Biomass and Biomass by pool is
 ## usable as a way to split the AGB cumulative curves in LandR into pools needed
 ## in CBM
-library(data.table)
 library(raster)
 library(SpaDES.core)
-
+library(googledrive)
+library(data.table)
 
 ## gives you access to a pre-simulation simList, containing cohortData,
 ## pixelGroupMap, speciesLayers, and ecoregionLayer
-fbiomassMaps2001 <- "~/GitHub/WBI_forecasts/outputs/MB/biomassMaps2001_MB.qs"
+#fbiomassMaps2001 <- "~/GitHub/WBI_forecasts/outputs/MB/biomassMaps2001_MB.qs"
+fbiomassMaps2001 <- file.path(getwd(),"data","biomassMaps2001_MB.qs")
 
-if (!file.exists(fbiomassMaps2001)) {
-  googledrive::drive_download(file = as_id("1PqeJWDh1ZBVHPokqJ9Hjmr0ZBEUbNHKi"), path = fbiomassMaps2001)
-}
+#if (!file.exists(fbiomassMaps2001)) {
+  googledrive::drive_download(file = as_id("1PqeJWDh1ZBVHPokqJ9Hjmr0ZBEUbNHKi"),
+                              path = fbiomassMaps2001,
+                              overwrite = TRUE)
+#}
+
 
 biomassMaps2001 <- loadSimList(fbiomassMaps2001)
+RIAcohortData <- as.data.table(biomassMaps2001$cohortData)
+setkeyv(RIAcohortData, "pixelGroup")
+
+cohortDataTotalB <- unique(RIAcohortData[, c("pixelGroup", "totalBiomass")], by = "pixelGroup")
+
+agbMap <- rasterizeReduced(cohortDataTotalB, biomassMaps2001$pixelGroupMap,
+                       newRasterCols = "totalBiomass", mapcode = "pixelGroup")
+Plot(agbMap, biomassMaps2001$pixelGroupMap)
 
 #other biomassMaps objects (simlists created during borealDataPrep) available here:
 # https://drive.google.com/drive/u/1/folders/1pFpAZwFqRIWxAygntEx8rVPV_b2BTqMB
