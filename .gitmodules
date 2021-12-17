@@ -1,0 +1,54 @@
+[submodule "modules/Biomass_borealDataPrep"]
+	path = modules/Biomass_borealDataPrep
+	url = https://github.com/PredictiveEcology/Biomass_borealDataPrep
+[submodule "modules/Biomass_core"]
+	path = modules/Biomass_core
+	url = https://github.com/PredictiveEcology/Biomass_core
+[submodule "modules/Biomass_regeneration"]
+	path = modules/Biomass_regeneration
+	url = https://github.com/PredictiveEcology/Biomass_regeneration
+[submodule "modules/Biomass_speciesData"]
+	path = modules/Biomass_speciesData
+	url = https://github.com/PredictiveEcology/Biomass_speciesData
+[submodule "modules/WBI_dataPrep_studyArea"]
+	path = modules/WBI_dataPrep_studyArea
+	url = https://github.com/PredictiveEcology/WBI_dataPrep_studyArea
+[submodule "modules/fireSense"]
+	path = modules/fireSense
+	url = https://github.com/PredictiveEcology/fireSense
+[submodule "modules/fireSense_EscapeFit"]
+	path = modules/fireSense_EscapeFit
+	url = https://github.com/PredictiveEcology/fireSense_EscapeFit
+[submodule "modules/fireSense_EscapePredict"]
+	path = modules/fireSense_EscapePredict
+	url = https://github.com/PredictiveEcology/fireSense_EscapePredict
+[submodule "modules/fireSense_IgnitionFit"]
+	path = modules/fireSense_IgnitionFit
+	url = https://github.com/PredictiveEcology/fireSense_IgnitionFit
+[submodule "modules/fireSense_IgnitionPredict"]
+	path = modules/fireSense_IgnitionPredict
+	url = https://github.com/PredictiveEcology/fireSense_IgnitionPredict
+[submodule "modules/fireSense_SpreadFit"]
+	path = modules/fireSense_SpreadFit
+	url = https://github.com/PredictiveEcology/fireSense_SpreadFit
+[submodule "modules/fireSense_SpreadPredict"]
+	path = modules/fireSense_SpreadPredict
+	url = https://github.com/PredictiveEcology/fireSense_SpreadPredict
+[submodule "modules/fireSense_dataPrepFit"]
+	path = modules/fireSense_dataPrepFit
+	url = https://github.com/PredictiveEcology/fireSense_dataPrepFit
+[submodule "modules/fireSense_dataPrepPredict"]
+	path = modules/fireSense_dataPrepPredict
+	url = https://github.com/PredictiveEcology/fireSense_dataPrepPredict
+[submodule "modules/Biomass_speciesParameters"]
+	path = modules/Biomass_speciesParameters
+	url = https://github.com/PredictiveEcology/Biomass_speciesParameters
+[submodule "modules/gmcsDataPrep"]
+	path = modules/gmcsDataPrep
+	url = https://github.com/ianmseddy/gmcsDataPrep
+[submodule "modules/Biomass_speciesFactorial"]
+	path = modules/Biomass_speciesFactorial
+	url = https://github.com/PredictiveEcology/Biomass_speciesFactorial
+[submodule "modules/Biomass_yieldTables"]
+	path = modules/Biomass_yieldTables
+	url = https://github.com/PredictiveEcology/Biomass_yieldTables

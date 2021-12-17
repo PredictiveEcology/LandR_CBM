@@ -1,0 +1,77 @@
+default:
+  batchmode: false
+  cachedb: "sqlite"
+  cacheformat: "qs"
+  climategcm: "CNRM-ESM2-1" ## '13GCMs_ensemble', 'CanESM5', 'CNRM-ESM2-1', 'CCSM4'
+  climatessp: 370 ## 245, 370, 585
+  cloud:
+    cachedir: "1vuXsTRma-vySEAvkofP8aTUqZhUVsxd0"
+    googleuser: ""
+    usecloud: false
+  codechecks: true
+  delaystart: 0
+  inputpaths: null
+  messagingNumCharsModule: 21
+  paths:
+    cachedir: "cache"
+    scratchdir: "/tmp/scratch/WBI_fireSense"
+  plot: true
+  reproduciblealgorithm: 2
+  reupload: false
+  run: 1
+  studyarea: "RIA" ## AB, BC, SK, MB, YT, NT, NU, RIA
+  uselandrcs: true
+  usememoise: false
+  useprerun: true
+  userequire: true
+
+production:
+  batchmode: true
+  codechecks: false
+  delaystart: !expr sample(15L:45L, 1) # 15-45 minute delay to stagger starts
+  plot: false
+
+alex:
+  inherits: production
+  cachedb: !expr if (grepl("spades", Sys.info()[["nodename"]])) "sqlite" else "postgresql"
+  cacheformat: "qs"
+  cloud:
+    #cachedir: ""
+    googleuser: "achubaty@for-cast.ca"
+    usecloud: false ## TODO: use cloud cache
+  codechecks: false ## TODO: set false after all fixed
+  nreps: 5
+  paths:
+    scratchdir: !expr if (grepl("for-cast.ca", Sys.info()[["nodename"]])) "/mnt/scratch/WBI_forecasts" else "/tmp/scratch/WBI_forecasts"
+  reupload: !expr if (grepl("picea.for-cast.ca", Sys.info()[["nodename"]])) TRUE else FALSE
+  slackchannel: "@alex.chubaty"
+  studyarea: "AB" ## AB, BC, SK, MB, YT, NT, NU, RIA
+  useprerun: !expr if (grepl("spades", Sys.info()[["nodename"]])) TRUE else FALSE
+
+ian:
+  cachedb: "sqlite"
+  cacheformat: "qs"
+  cloud:
+    #cachedir: ""
+    googleuser: 'ianmseddy@gmail.com'
+    usecloud: false
+  codechecks: true ## TODO: set false after all fixed
+  reproduciblealgorithm: 2 #use old digest
+  paths:
+    scratchdir: !expr if (Sys.info()[["nodename"]] == "W-VIC-A127551") "D:/Ian/scratch" else '/mnt/scratch/ieddy/'
+
+eliot:
+  cachedb: "sqlite"
+  cacheformat: "qs"
+  cloud:
+    #cachedir: ""
+    googleuser: 'eliotmcintire@gmail.com'
+    usecloud: false
+  codechecks: false
+  inputpaths: ~/data
+  messagingNumCharsModule: 24
+  paths:
+    scratchdir: "/tmp/scratch/WBI_fireSense"
+  reproduciblealgorithm: 2
+  studyarea: "YT" ## AB, BC, SK, MB, YT, NT, NU, RIA
+  usememoise: true
