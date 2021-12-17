@@ -42,7 +42,7 @@ modules <- extractPkgName(moduleGitRepos)
 setPaths(cachePath = "cache",
          inputPath = "inputs",
          modulePath = "modules",
-         outputPath = "outputs")
+         outputPath = "outputs/yield_curves")
 
 ## Module documentation -- please go to these pages to read about each module
 ##  In some cases, there will be important defaults that a user should be aware of
@@ -133,6 +133,7 @@ simOut <- simInitAndSpades(
   objects = objects,
   debug = 1, loadOrder = modules
 )
+qs::qsave(simOut, file.path(Paths$outputPath, "simOut_yield_curves.qs"))
 
 # Extras not used, for plotting some things
 if (FALSE) {
