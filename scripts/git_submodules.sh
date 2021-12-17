@@ -21,11 +21,15 @@ git submodule add https://github.com/PredictiveEcology/fireSense_SpreadPredict m
 git submodule add https://github.com/PredictiveEcology/fireSense_dataPrepFit modules/fireSense_dataPrepFit
 git submodule add https://github.com/PredictiveEcology/fireSense_dataPrepPredict modules/fireSense_dataPrepPredict
 
+## yield curves
+git submodule add https://github.com/PredictiveEcology/Biomass_speciesFactorial modules/Biomass_speciesFactorial
+git submodule add https://github.com/PredictiveEcology/Biomass_yieldTables modules/Biomass_yieldTables 
+
 cd modules/Biomass_borealDataPrep && git checkout development
 cd ../Biomass_core && git checkout development
 cd ../Biomass_regeneration && git checkout development
 cd ../Biomass_speciesData && git checkout development
-cd ../Biomass_speciesParameters && git checkout development
+cd ../Biomass_speciesParameters && git checkout EliotTweaks
 cd ../gmcsDataPrep && git checkout development
 
 #cd ../WBI_dataPrep_studyArea && git checkout development
