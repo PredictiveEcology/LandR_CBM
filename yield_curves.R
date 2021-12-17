@@ -70,10 +70,11 @@ fixRTM <- function(x) {
   sa <- sf::as_Spatial(sa)
   return(sa)
 }
+
 SA_ERIntersect <- function(x, studyArea) {
   x <- sf::st_read(x)
   sa_sf <- sf::st_as_sf(studyArea)
-  ecoregions <- sf::st_transform(x, st_crs(sa_sf))
+  ecoregions <- sf::st_transform(x, sf::st_crs(sa_sf))
   studyAreaER <- sf::st_intersects(ecoregions, sa_sf, sparse = FALSE)
   sf::as_Spatial(ecoregions[studyAreaER,])
 }
@@ -126,7 +127,6 @@ simOut <- simInitAndSpades(
   objects = objects,
   debug = 1, loadOrder = modules
 )
-
 
 # Extras not used, for plotting some things
 if (FALSE) {
