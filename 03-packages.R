@@ -1,4 +1,4 @@
-.spatialPkgs <- c("lwgeom", "rgdal", "rgeos", "sf", "sp", "raster", "terra")
+.spatialPkgs <- c("lwgeom", "rgdal", "rgeos", "sf", "sp", "stars", "raster", "terra")
 
 if (!all(.spatialPkgs %in% rownames(installed.packages()))) {
   install.packages(.spatialPkgs, repos = "https://cran.rstudio.com")
