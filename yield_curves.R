@@ -79,15 +79,21 @@ SA_ERIntersect <- function(x, studyArea) {
   sf::as_Spatial(ecoregions[studyAreaER,])
 }
 
-studyArea <- Cache(prepInputs, url = "https://drive.google.com/file/d/1h7gK44g64dwcoqhij24F2K54hs5e35Ci/view?usp=sharing",
-                   destinationPath = Paths$inputPath,
-                   fun = fixRTM, overwrite = TRUE)
-studyAreaER <- Cache(prepInputs, url =  "https://sis.agr.gc.ca/cansis/nsdb/ecostrat/region/ecoregion_shp.zip",
-                     destinationPath = Paths$inputPath, fun = quote(SA_ERIntersect(x = targetFilePath, studyArea)),
-                     overwrite = TRUE)
+studyArea <- Cache(
+  prepInputs,
+  url = "https://drive.google.com/file/d/1h7gK44g64dwcoqhij24F2K54hs5e35Ci/",
+  destinationPath = Paths$inputPath,
+  fun = fixRTM, overwrite = TRUE
+)
+studyAreaER <- Cache(
+  prepInputs,
+  url =  "https://sis.agr.gc.ca/cansis/nsdb/ecostrat/region/ecoregion_shp.zip",
+  destinationPath = Paths$inputPath,
+  fun = quote(SA_ERIntersect(x = targetFilePath, studyArea)),
+  overwrite = TRUE
+)
 
-speciesToUse <- c("Abie_las", "Betu_pap", "Pice_gla", "Pice_mar", "Pinu_con",
-                  "Popu_tre", "Pice_eng")
+speciesToUse <- c("Abie_las", "Betu_pap", "Pice_gla", "Pice_mar", "Pinu_con", "Popu_tre", "Pice_eng")
 speciesNameConvention <- LandR::equivalentNameColumn(speciesToUse, LandR::sppEquivalencies_CA)
 sppEquiv <- LandR::sppEquivalencies_CA[LandR::sppEquivalencies_CA[[speciesNameConvention]] %in% speciesToUse,]
 
