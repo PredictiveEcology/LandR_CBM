@@ -147,5 +147,4 @@ if (FALSE) {
   ggplot(ageWhoIsDom2, aes(age, V1)) + geom_line() + theme_bw() + geom_smooth()
 
   giForCBM <- data.table::fread("growth_increments.csv")
-
 }
