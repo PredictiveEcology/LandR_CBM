@@ -52,3 +52,12 @@
 [submodule "modules/Biomass_yieldTables"]
 	path = modules/Biomass_yieldTables
 	url = https://github.com/PredictiveEcology/Biomass_yieldTables
+[submodule "modules/CBM_core"]
+	path = modules/CBM_core
+	url = https://github.com/PredictiveEcology/CBM_core
+[submodule "modules/CBM_defaults"]
+	path = modules/CBM_defaults
+	url = https://github.com/PredictiveEcology/CBM_defaults
+[submodule "modules/CBM_vol2biomass"]
+	path = modules/CBM_vol2biomass
+	url = https://github.com/PredictiveEcology/CBM_vol2biomass
