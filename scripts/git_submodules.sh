@@ -2,6 +2,11 @@
 
 git submodule add https://github.com/PredictiveEcology/WBI_dataPrep_studyArea modules/WBI_dataPrep_studyArea
 
+## CBM
+git submodule add https://github.com/PredictiveEcology/CBM_core modules/CBM_core
+git submodule add https://github.com/PredictiveEcology/CBM_defaults modules/CBM_defaults
+git submodule add https://github.com/PredictiveEcology/CBM_vol2biomass modules/CBM_vol2biomass
+
 ## LandR
 git submodule add https://github.com/PredictiveEcology/Biomass_borealDataPrep modules/Biomass_borealDataPrep
 git submodule add https://github.com/PredictiveEcology/Biomass_core modules/Biomass_core
