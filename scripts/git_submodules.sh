@@ -9,7 +9,8 @@ git submodule add https://github.com/cboisvenue/CBM_dataPrep_RIAharvest2 modules
 git submodule add https://github.com/cboisvenue/CBM_dataPrep_RIApresentDay modules/CBM_dataPrep_RIApresentDay
 git submodule add https://github.com/PredictiveEcology/CBM_core modules/CBM_core
 git submodule add https://github.com/PredictiveEcology/CBM_defaults modules/CBM_defaults
-git submodule add https://github.com/PredictiveEcology/CBM_vol2biomass modules/CBM_vol2biomass
+#git submodule add https://github.com/PredictiveEcology/CBM_vol2biomass modules/CBM_vol2biomass
+git submodule add https://github.com/cboisvenue/CBM_vol2biomass_RIA modules/CBM_vol2biomass_RIA
 
 ## LandR
 git submodule add https://github.com/PredictiveEcology/Biomass_borealDataPrep modules/Biomass_borealDataPrep

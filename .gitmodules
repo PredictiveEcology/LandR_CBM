@@ -73,3 +73,6 @@
 [submodule "modules/CBM_dataPrep_RIAharvest2"]
 	path = modules/CBM_dataPrep_RIAharvest2
 	url = https://github.com/cboisvenue/CBM_dataPrep_RIAharvest2
+[submodule "modules/CBM_vol2biomass_RIA"]
+	path = modules/CBM_vol2biomass_RIA
+	url = https://github.com/cboisvenue/CBM_vol2biomass_RIA
