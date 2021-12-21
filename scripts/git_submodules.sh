@@ -3,7 +3,6 @@
 git submodule add https://github.com/PredictiveEcology/WBI_dataPrep_studyArea modules/WBI_dataPrep_studyArea
 
 ## CBM
-git submodule add https://github.com/PredictiveEcology/CBM_dataPrep_RIA
 git submodule add https://github.com/PredictiveEcology/CBM_core modules/CBM_core
 git submodule add https://github.com/PredictiveEcology/CBM_defaults modules/CBM_defaults
 git submodule add https://github.com/PredictiveEcology/CBM_vol2biomass modules/CBM_vol2biomass
@@ -29,7 +28,7 @@ git submodule add https://github.com/PredictiveEcology/fireSense_dataPrepPredict
 
 ## yield curves
 git submodule add https://github.com/PredictiveEcology/Biomass_speciesFactorial modules/Biomass_speciesFactorial
-git submodule add https://github.com/PredictiveEcology/Biomass_yieldTables modules/Biomass_yieldTables 
+git submodule add https://github.com/PredictiveEcology/Biomass_yieldTables modules/Biomass_yieldTables
 
 cd modules/Biomass_borealDataPrep && git checkout development
 cd ../Biomass_core && git checkout development
