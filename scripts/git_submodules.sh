@@ -3,6 +3,7 @@
 git submodule add https://github.com/PredictiveEcology/WBI_dataPrep_studyArea modules/WBI_dataPrep_studyArea
 
 ## CBM
+git sbmodule add https://github.com/cboisvenue/CBM_dataPrep_RIApresentDay modules/CBM_dataPrep_RIApresentDay
 git submodule add https://github.com/PredictiveEcology/CBM_core modules/CBM_core
 git submodule add https://github.com/PredictiveEcology/CBM_defaults modules/CBM_defaults
 git submodule add https://github.com/PredictiveEcology/CBM_vol2biomass modules/CBM_vol2biomass
