@@ -61,3 +61,6 @@
 [submodule "modules/CBM_vol2biomass"]
 	path = modules/CBM_vol2biomass
 	url = https://github.com/PredictiveEcology/CBM_vol2biomass
+[submodule "modules/CBM_dataPrep_RIA"]
+	path = modules/CBM_dataPrep_RIA
+	url = https://github.com/PredictiveEcology/CBM_dataPrep_RIA
