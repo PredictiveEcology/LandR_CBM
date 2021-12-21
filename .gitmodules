@@ -67,3 +67,6 @@
 [submodule "modules/CBM_dataPrep_RIAfri"]
 	path = modules/CBM_dataPrep_RIAfri
 	url = https://github.com/cboisvenue/CBM_dataPrep_RIAfri
+[submodule "modules/CBM_dataPrep_RIAharvest1"]
+	path = modules/CBM_dataPrep_RIAharvest1
+	url = https://github.com/cboisvenue/CBM_dataPrep_RIAharvest1
