@@ -5,7 +5,7 @@ default:
   climategcm: "CNRM-ESM2-1" ## '13GCMs_ensemble', 'CanESM5', 'CNRM-ESM2-1', 'CCSM4'
   climatessp: 370 ## 245, 370, 585
   cloud:
-    cachedir: "1vuXsTRma-vySEAvkofP8aTUqZhUVsxd0"
+    cachedir: ""
     googleuser: ""
     usecloud: false
   codechecks: true
@@ -14,7 +14,7 @@ default:
   messagingNumCharsModule: 21
   paths:
     cachedir: "cache"
-    scratchdir: "/tmp/scratch/WBI_fireSense"
+    scratchdir: "/tmp/scratch/LandR_CBM"
   plot: true
   reproduciblealgorithm: 2
   reupload: false
@@ -42,7 +42,7 @@ alex:
   codechecks: false ## TODO: set false after all fixed
   nreps: 5
   paths:
-    scratchdir: !expr if (grepl("for-cast.ca", Sys.info()[["nodename"]])) "/mnt/scratch/WBI_forecasts" else "/tmp/scratch/WBI_forecasts"
+    scratchdir: !expr if (grepl("for-cast.ca", Sys.info()[["nodename"]])) "/mnt/scratch/LandR_CBM" else "/tmp/scratch/LandR_CBM"
   reupload: !expr if (grepl("picea.for-cast.ca", Sys.info()[["nodename"]])) TRUE else FALSE
   slackchannel: "@alex.chubaty"
   studyarea: "AB" ## AB, BC, SK, MB, YT, NT, NU, RIA
@@ -71,7 +71,7 @@ eliot:
   inputpaths: ~/data
   messagingNumCharsModule: 24
   paths:
-    scratchdir: "/tmp/scratch/WBI_fireSense"
+    scratchdir: "/tmp/scratch/LandR_CBM"
   reproduciblealgorithm: 2
   studyarea: "YT" ## AB, BC, SK, MB, YT, NT, NU, RIA
   usememoise: true
