@@ -10,7 +10,10 @@ dynamicModules <- list("fireSense_dataPrepPredict",
                        "fireSense_EscapePredict",
                        "fireSense_SpreadPredict",
                        "Biomass_core",
-                       "Biomass_regeneration")
+                       "Biomass_regeneration",
+                       "CBM_defaults",
+                       "CBM_vol2biomass_RIA", ## TODO: confirm which vol2biomass module to use
+                       "CBM_core")
 
 dynamicObjects <- list(
   ATAstack = simOutPreamble[["ATAstack"]],
@@ -19,6 +22,7 @@ dynamicObjects <- list(
   CMInormal = simOutPreamble[["CMInormal"]],
   CMIstack = simOutPreamble[["CMIStack"]],
   cohortData = fSsimDataPrep[["cohortData2011"]],
+  dbPath = file.path(inputDir, "cbm_defaults", "cbm_defaults.db"),
   ecoregion = biomassMaps2011[["ecoregion"]],
   ecoregionMap = biomassMaps2011[["ecoregionMap"]],
   flammableRTM = fSsimDataPrep[["flammableRTM"]],
@@ -41,6 +45,7 @@ dynamicObjects <- list(
   speciesLayers = biomassMaps2011[["speciesLayers"]], ## TODO: does Biomass_core actually need this?
   sppColorVect = biomassMaps2011[["sppColorVect"]],
   sppEquiv = fSsimDataPrep[["sppEquiv"]],
+  sqlDir = file.path(inputDir, "cbm_defaults"),
   studyArea = biomassMaps2011[["studyArea"]],
   studyAreaLarge = biomassMaps2011[["studyAreaLarge"]],
   studyAreaPSP = simOutPreamble[["studyAreaPSP"]],
@@ -115,6 +120,18 @@ dynamicParams <- list(
   ),
   Biomass_regeneration = list(
     "fireInitialTime" = times$start + 1 #regeneration is scheduled earlier, so it starts in 2012
+  ),
+  CBM_core = list(
+    .useCache = FALSE,
+    .plotInitialTime = times$start,
+    poolsToPlot = c("totalCarbon"),
+    spinupDebug = FALSE ## TODO: temporary
+  ),
+  CBM_defaults = list(
+    .useCache = TRUE
+  ),
+  CBM_vol2biomass_RIA = list(
+    .useCache = TRUE
   ),
   fireSense_dataPrepPredict = list(
     "fireTimeStep" = 1,
