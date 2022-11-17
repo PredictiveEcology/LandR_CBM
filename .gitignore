@@ -4,7 +4,7 @@
 .RData
 .Ruserdata
 .Rproj.user/
-.Renviron
+*.Renviron
 
 # simulation, knitr and R markdown cache directories
 *_cache/
@@ -20,11 +20,9 @@ cache
 # simulation files + directories
 config_db.yml
 inputs/
+inputs
 outputs/
 outputs
-
-# saved simLists
-spreadOut*
 
 ## R package libraries
 packages/*
