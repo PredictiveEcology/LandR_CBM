@@ -76,3 +76,6 @@
 [submodule "modules/CBM_vol2biomass_RIA"]
 	path = modules/CBM_vol2biomass_RIA
 	url = https://github.com/cboisvenue/CBM_vol2biomass_RIA
+[submodule "modules/LandRCBM_split3pools"]
+	path = modules/LandRCBM_split3pools
+	url = https://github.com/cboisvenue/LandRCBM_split3pools
