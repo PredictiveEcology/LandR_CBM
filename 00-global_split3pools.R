@@ -113,8 +113,9 @@ do.call(SpaDES.core::setPaths, paths)
 
 ## Study area RTM
 
-RIArtm <- Cache(prepInputs, url = "https://drive.google.com/file/d/1h7gK44g64dwcoqhij24F2K54hs5e35Ci/view?usp=sharing",
-                destinationPath = Paths$inputPath)
+RIArtm <- Cache(prepInputs,
+                url = "https://drive.google.com/file/d/1h7gK44g64dwcoqhij24F2K54hs5e35Ci",
+                destinationPath = paths[["inputPath"]])
 ##TODO
 ### I think there needs to be this as a parameter for this module?
 #idCols <- c(“pixelGroup”, “cohort_id”)
@@ -131,24 +132,20 @@ RIArtm <- Cache(prepInputs, url = "https://drive.google.com/file/d/1h7gK44g64dwc
 #   )
 # }
 
-
-objects <- list(RTM = RIArtm)
+objects <- list(rasterToMatch = RIArtm)
 times <- list(start = 0, end = 350)
 
 parameters <- list(
   LandRCBM_split3pools = list(.useCache = ".inputObjects")
-  )
+)
 
 modules <- list("LandRCBM_split3pools")
-
-
-
 
 # All the action is here
 split3poolsInit <- simInit(
   times = times,
   params = parameters,
-  modules = "modules",
+  modules = modules,
   objects = objects
 )
 
