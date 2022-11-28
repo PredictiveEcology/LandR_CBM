@@ -1,7 +1,7 @@
-# project basics ------------------------------------------------------------------------------
+# project basic setup -------------------------------------------------------------------------
 
 if (file.exists("~/.Renviron")) readRenviron("~/.Renviron") ## GITHUB_PAT
-if (file.exists("LandR_CBM.Renviron")) readRenviron("LandWeb.Renviron") ## database credentials
+if (file.exists("LandR_CBM.Renviron")) readRenviron("LandR_CBM.Renviron") ## database credentials
 
 .ncores <- min(parallel::detectCores() / 2, 32L)
 .nodename <- Sys.info()[["nodename"]]
@@ -43,7 +43,7 @@ if (!"remotes" %in% rownames(installed.packages(lib.loc = .libPaths()[1]))) {
 
 Require.version <- "PredictiveEcology/Require@development"
 if (!"Require" %in% rownames(installed.packages(lib.loc = .libPaths()[1])) ||
-    packageVersion("Require", lib.loc = .libPaths()[1]) < "0.2.4.9003") {
+    packageVersion("Require", lib.loc = .libPaths()[1]) < "0.2.5") {
   remotes::install_github(Require.version)
 }
 
@@ -148,7 +148,6 @@ split3poolsInit <- simInit(
   modules = modules,
   objects = objects
 )
-
 
 # # Extras not used, for plotting some things
 # if (FALSE) {
