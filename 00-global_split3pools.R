@@ -25,11 +25,12 @@ options(
   Require.RPackageCache = "default" ## will use default package cache directory: `RequirePkgCacheDir()`
 )
 
-## work-around for working from PFC...R cannot connect to certain urls
-## TODO: improve conditional by only using wininet if *at* PFC, not just on a PFC machine
-if ((.Platform$OS.type == "windows") && grepl("[L|W]-VIC", .nodename)) {
-  options("download.file.method" = "wininet")
-}
+## This is not needed anymore
+# ## work-around for working from PFC...R cannot connect to certain urls
+# ## TODO: improve conditional by only using wininet if *at* PFC, not just on a PFC machine
+# if ((.Platform$OS.type == "windows") && grepl("[L|W]-VIC", .nodename)) {
+#   options("download.file.method" = "wininet")
+# }
 
 # install and load packages -------------------------------------------------------------------
 
@@ -126,7 +127,7 @@ RIArtm <- Cache(prepInputs,
 
 ## TODO: I think there needs to be this as a parameter for this module?
 #idCols <- c(“pixelGroup”, “cohort_id”)
-# this would need to trickly through the module
+# this would need to trickle through the module
 
 # this is not working for me
 # options(spades.moduleCodeChecks = FALSE, ## don't turn this off during development; use TRUE
@@ -149,33 +150,12 @@ parameters <- list(
 modules <- list("LandRCBM_split3pools")
 
 # All the action is here
-split3poolsInit <- simInit(
+split3poolsOut <- simInitAndSpades(
   times = times,
   params = parameters,
   modules = modules,
-  objects = objects#,
+  objects = objects,
+  debug = TRUE#,
   #paths = paths
 )
 
-# # Extras not used, for plotting some things
-# if (FALSE) {
-#   cd1 <- cds[pixelGroup %in% sample(cds$pixelGroup, size = 49)]
-#   cd1 <- rbindlist(list(cd1, cd1[, list(speciesCode = "Total", B = sum(B)), by = c("age", "pixelGroup")]), use.names = TRUE)
-#   ggplot(cd1, aes(age, B, colour = speciesCode)) + facet_wrap(~pixelGroup) + geom_line() + theme_bw()
-#
-#   domAt100 <- cds[age == 100, speciesCode[which.max(B)], by = "pixelGroup"]
-#   domAt200 <- cds[age == 200, speciesCode[which.max(B)], by = "pixelGroup"]
-#   domAt300 <- cds[age == 300, speciesCode[which.max(B)], by = "pixelGroup"]
-#
-#   ageWhoIsDom <- cds[, B[which.max(B)]/sum(B), by = c("age", "pixelGroup")]
-#   sam <- sample(seq(NROW(ageWhoIsDom)), size = NROW(ageWhoIsDom)/100)
-#   ageWhoIsDom2 <- ageWhoIsDom[sam]
-#   ggplot(ageWhoIsDom2, aes(age, V1)) + geom_line() + theme_bw() + geom_smooth()
-#
-#   ageWhoIsDom2 <- ageWhoIsDom[sam, mean(V1), by = "age"]
-#   ggplot(ageWhoIsDom2, aes(age, V1)) + geom_line() + theme_bw() + geom_smooth()
-#
-#   giForCBM <- data.table::fread("growth_increments.csv")
-#
-# }
-#
