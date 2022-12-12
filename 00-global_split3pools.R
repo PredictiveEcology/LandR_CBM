@@ -89,7 +89,7 @@ Require(unique(c(modulePkgs, otherPkgs)), require = FALSE, standAlone = TRUE, up
 ## NOTE: always load packages LAST, after installation above;
 ##       ensure plyr loaded before dplyr or there will be problems
 Require(c("data.table", "plyr", "pryr", "reproducible", "SpaDES.core",
-          "googledrive", "httr", "magrittr", "sessioninfo", "slackr"),
+          "googledrive", "httr", "magrittr", "sessioninfo", "slackr", "ggforce"),
         upgrade = FALSE, standAlone = TRUE)
 
 # configure project ---------------------------------------------------------------------------
