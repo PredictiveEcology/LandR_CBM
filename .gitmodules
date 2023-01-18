@@ -64,3 +64,6 @@
 [submodule "modules/LandRCBM_split3pools"]
 	path = modules/LandRCBM_split3pools
 	url = https://github.com/cboisvenue/LandRCBM_split3pools
+[submodule "modules/canClimateData"]
+	path = modules/canClimateData
+	url = https://github.com/PredictiveEcology/canClimateData/
