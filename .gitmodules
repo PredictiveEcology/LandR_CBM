@@ -64,9 +64,6 @@
 [submodule "modules/CBM_dataPrep_RIApresentDay"]
 	path = modules/CBM_dataPrep_RIApresentDay
 	url = https://github.com/cboisvenue/CBM_dataPrep_RIApresentDay
-[submodule "modules/CBM_dataPrep_RIAharvest1"]
-	path = modules/CBM_dataPrep_RIAharvest1
-	url = https://github.com/cboisvenue/CBM_dataPrep_RIAharvest1
 [submodule "modules/CBM_dataPrep_RIAharvest2"]
 	path = modules/CBM_dataPrep_RIAharvest2
 	url = https://github.com/cboisvenue/CBM_dataPrep_RIAharvest2
